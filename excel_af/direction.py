@@ -1,7 +1,7 @@
 """This module contains class for directions of excel tables."""
 
 
-from core.representable_object import RepresentableObject
+from excel_af.representable_object import RepresentableObject
 
 
 class Direction(RepresentableObject):

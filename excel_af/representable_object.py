@@ -3,7 +3,7 @@
 
 from typing import Set
 
-from core.helpers import get_representation
+from excel_af.helpers import get_representation
 
 
 class RepresentableObject:

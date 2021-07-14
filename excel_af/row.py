@@ -1,7 +1,7 @@
 """This module contains class for row numbers of excel sheet cells."""
 
 
-from core.representable_object import RepresentableObject
+from excel_af.representable_object import RepresentableObject
 
 
 class Row(RepresentableObject):
