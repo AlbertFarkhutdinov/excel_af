@@ -3,7 +3,7 @@
 
 from typing import Optional, Union
 
-from core.representable_object import RepresentableObject
+from excel_af.representable_object import RepresentableObject
 
 
 class CellChecker(RepresentableObject):

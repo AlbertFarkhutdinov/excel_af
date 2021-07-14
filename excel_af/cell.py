@@ -4,10 +4,10 @@
 from __future__ import annotations
 from typing import Optional, Tuple, Union
 
-from core.helpers import get_instance
-from core.representable_object import RepresentableObject
-from core.column import Column
-from core.row import Row
+from excel_af.helpers import get_instance
+from excel_af.representable_object import RepresentableObject
+from excel_af.column import Column
+from excel_af.row import Row
 
 
 class Cell(RepresentableObject):

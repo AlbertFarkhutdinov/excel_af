@@ -6,12 +6,12 @@ of the class for tables in excel sheet.
 
 from typing import Optional, Union
 
-from core.helpers import get_instance
-from core.representable_object import RepresentableObject
-from core.cell import Cell
-from core.column import Column
-from core.direction import Direction
-from core.row import Row
+from excel_af.helpers import get_instance
+from excel_af.representable_object import RepresentableObject
+from excel_af.cell import Cell
+from excel_af.column import Column
+from excel_af.direction import Direction
+from excel_af.row import Row
 
 
 class Table(RepresentableObject):

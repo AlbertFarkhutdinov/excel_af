@@ -9,13 +9,13 @@ from typing import Any, Dict, List, Optional, Set, Union
 
 import xlwings as xw
 
-from core.helpers import math_round
-from core.representable_object import RepresentableObject
-from core.cell import Cell
-from core.cell_checker import CellChecker
-from core.column import Column
-from core.row import Row
-from core.table import Table
+from excel_af.helpers import math_round
+from excel_af.representable_object import RepresentableObject
+from excel_af.cell import Cell
+from excel_af.cell_checker import CellChecker
+from excel_af.column import Column
+from excel_af.row import Row
+from excel_af.table import Table
 
 
 class CustomSheet(RepresentableObject):
