@@ -7,7 +7,7 @@ requirements = ["xlwings>=0.24.2"]
 
 setuptools.setup(
     name="excel_af",
-    version="0.0.1",
+    version="0.0.2",
     author="Albert Farkhutdinov",
     author_email="albertfarhutdinov@gmail.com",
     description="Python package to work with Microsoft Excel files.",
