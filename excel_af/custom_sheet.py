@@ -63,7 +63,11 @@ class CustomSheet(RepresentableObject):
 
         """
         self.workbook_path = workbook_path
-        workbook = xw.Book(self.workbook_path)
+        try:
+            workbook = xw.Book(self.workbook_path)
+        except FileNotFoundError:
+            workbook = xw.Book()
+            workbook.save(self.workbook_path)
         if sheet_name:
             self.sheet = workbook.sheets[sheet_name]
         else:
