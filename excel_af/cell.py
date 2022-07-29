@@ -27,9 +27,7 @@ class Cell(RepresentableObject):
     """
 
     @staticmethod
-    def get_row_and_column_from_address(
-            address: str,
-    ) -> Tuple[Row, Column]:
+    def get_row_and_column_from_address(address: str) -> Tuple[Row, Column]:
         """
         Return row number and column name corresponding
         to the cell in the Excel sheet with specified address.

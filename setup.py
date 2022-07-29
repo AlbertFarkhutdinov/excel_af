@@ -11,7 +11,7 @@ requirements = [
 
 setuptools.setup(
     name="excel_af",
-    version="0.0.4",
+    version="0.0.5",
     author="Albert Farkhutdinov",
     author_email="albertfarhutdinov@gmail.com",
     description="Python package to work with Microsoft Excel files.",

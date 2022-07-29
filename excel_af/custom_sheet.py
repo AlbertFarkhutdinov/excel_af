@@ -51,6 +51,8 @@ class CustomSheet(RepresentableObject):
             self,
             workbook_path: str,
             sheet_name: Optional[str] = None,
+            font_name: str = 'Times New Roman',
+            font_size: int = 16,
     ) -> None:
         """
         Initialization of `CustomSheet` instance.
@@ -73,6 +75,8 @@ class CustomSheet(RepresentableObject):
             self.sheet = workbook.sheets[sheet_name]
         else:
             self.sheet = workbook.sheets.active
+        self.font_name = font_name
+        self.font_size = font_size
 
     @property
     def excluded_attributes_for_repr(self) -> Set[str]:
@@ -186,6 +190,8 @@ class CustomSheet(RepresentableObject):
             if it is float.
 
         """
+        self.sheet.range(address).font.name = self.font_name
+        self.sheet.range(address).font.size = self.font_size
         if accuracy and isinstance(value, float):
             self.sheet.range(address).value = get_rounded_number(
                 number=value,
@@ -285,7 +291,7 @@ def main():
         os.path.dirname(os.path.abspath(__file__)),
         'test_sheet.xlsm'
     )
-    xw.Book(workbook_path).set_mock_caller()
+    # xw.Book(workbook_path).set_mock_caller()
     sheet = CustomSheet(
         workbook_path=workbook_path,
     )
@@ -314,6 +320,7 @@ def main():
     )
     print(numbers_list)
     sheet.set_value(value=1.156, address='B1', accuracy=2,)
+    sheet.set_value(value='abs', address='B2')
     sheet.set_numbers_list(
         table=Table(
             first_cell=Cell(row=Row(1), column=Column('N')),
@@ -343,5 +350,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print(repr(CustomSheet('test_sheet.xlsm')))
-    # main()
+    # print(repr(CustomSheet('test_sheet.xlsm')))
+    main()
