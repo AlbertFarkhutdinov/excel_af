@@ -169,7 +169,7 @@ class CustomSheet(RepresentableObject):
             self,
             value: Optional[Union[str, float, int]],
             address: str,
-            accuracy: int,
+            accuracy: Optional[int] = None,
     ) -> None:
         """
         Set value for the cell with specified address.
@@ -180,20 +180,19 @@ class CustomSheet(RepresentableObject):
             The value to be set.
         address : str
             The cell address.
-        accuracy : int
+        accuracy : int, optional
             Required number of digits after
             decimal separator in `value`,
             if it is float.
 
         """
-        self.sheet.range(address).value = (
-            get_rounded_number(
+        if accuracy and isinstance(value, float):
+            self.sheet.range(address).value = get_rounded_number(
                 number=value,
                 number_of_digits_after_separator=accuracy,
             )
-            if isinstance(value, float)
-            else value
-        )
+        else:
+            self.sheet.range(address).value = value
 
     def set_numbers_list(
             self,
