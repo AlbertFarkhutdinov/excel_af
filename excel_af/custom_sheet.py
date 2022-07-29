@@ -1,6 +1,6 @@
 """
 This module contains the description
-of the class for custom excel sheet.
+of the class for custom Excel sheet.
 
 """
 
@@ -21,14 +21,14 @@ from excel_af.table import Table
 
 class CustomSheet(RepresentableObject):
     """
-    Class for custom excel sheet.
+    Class for custom Excel sheet.
 
     Attributes
     ----------
     workbook_path : str
-        Path to the excel workbook.
+        Path to the Excel workbook.
     sheet: xlwings.Sheet
-        Active sheet of the excel workbook.
+        Active sheet of the Excel workbook.
 
     Methods
     -------
@@ -37,7 +37,7 @@ class CustomSheet(RepresentableObject):
     get_number(address, number_type, cell_checker_kwargs)
         Return the number from the cell with specified address.
     get_numbers_list(table, number_type, cell_checker_kwargs)
-        Return the list of numbers number from the specified table.
+        Return the list of numbers from the specified table.
     set_value(value, address, accuracy)
         Set value for the cell with specified address.
     set_numbers_list(table, values, accuracy)
@@ -51,6 +51,8 @@ class CustomSheet(RepresentableObject):
             self,
             workbook_path: str,
             sheet_name: Optional[str] = None,
+            font_name: str = 'Times New Roman',
+            font_size: int = 16,
     ) -> None:
         """
         Initialization of `CustomSheet` instance.
@@ -58,7 +60,7 @@ class CustomSheet(RepresentableObject):
         Parameters
         ----------
         workbook_path : str
-            Path to excel workbook.
+            Path to Excel workbook.
         sheet_name: str, optional
             Name of sheet in workbook. If it is None, active sheet is used.
 
@@ -73,6 +75,8 @@ class CustomSheet(RepresentableObject):
             self.sheet = workbook.sheets[sheet_name]
         else:
             self.sheet = workbook.sheets.active
+        self.font_name = font_name
+        self.font_size = font_size
 
     @property
     def excluded_attributes_for_repr(self) -> Set[str]:
@@ -136,8 +140,7 @@ class CustomSheet(RepresentableObject):
             cell_checker_kwargs: Optional[Dict[str, Any]] = None,
     ) -> List[Union[float, int]]:
         """
-        Return the list of numbers number from
-        the specified table.
+        Return the list of numbers from the specified table.
 
         Parameters
         ----------
@@ -151,8 +154,7 @@ class CustomSheet(RepresentableObject):
         Returns
         -------
         list
-            The list of numbers number from
-            the specified table.
+            The list of numbers from the specified table.
 
         """
         numbers_list = []
@@ -171,7 +173,7 @@ class CustomSheet(RepresentableObject):
             self,
             value: Optional[Union[str, float, int]],
             address: str,
-            accuracy: int,
+            accuracy: Optional[int] = None,
     ) -> None:
         """
         Set value for the cell with specified address.
@@ -182,20 +184,21 @@ class CustomSheet(RepresentableObject):
             The value to be set.
         address : str
             The cell address.
-        accuracy : int
+        accuracy : int, optional
             Required number of digits after
             decimal separator in `value`,
             if it is float.
 
         """
-        self.sheet.range(address).value = (
-            get_rounded_number(
+        self.sheet.range(address).font.name = self.font_name
+        self.sheet.range(address).font.size = self.font_size
+        if accuracy and isinstance(value, float):
+            self.sheet.range(address).value = get_rounded_number(
                 number=value,
                 number_of_digits_after_separator=accuracy,
             )
-            if isinstance(value, float)
-            else value
-        )
+        else:
+            self.sheet.range(address).value = value
 
     def set_numbers_list(
             self,
@@ -288,7 +291,7 @@ def main():
         os.path.dirname(os.path.abspath(__file__)),
         'test_sheet.xlsm'
     )
-    xw.Book(workbook_path).set_mock_caller()
+    # xw.Book(workbook_path).set_mock_caller()
     sheet = CustomSheet(
         workbook_path=workbook_path,
     )
@@ -317,6 +320,7 @@ def main():
     )
     print(numbers_list)
     sheet.set_value(value=1.156, address='B1', accuracy=2,)
+    sheet.set_value(value='abs', address='B2')
     sheet.set_numbers_list(
         table=Table(
             first_cell=Cell(row=Row(1), column=Column('N')),
@@ -346,5 +350,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print(repr(CustomSheet('test_sheet.xlsm')))
-    # main()
+    # print(repr(CustomSheet('test_sheet.xlsm')))
+    main()

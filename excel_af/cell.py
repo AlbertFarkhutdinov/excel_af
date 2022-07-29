@@ -1,4 +1,4 @@
-"""This module contains class for excel sheet cells."""
+"""This module contains class for Excel sheet cells."""
 
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ from excel_af.row import Row
 
 class Cell(RepresentableObject):
     """
-    Class for excel sheet cells.
+    Class for Excel sheet cells.
 
     Attributes
     ----------
@@ -27,17 +27,15 @@ class Cell(RepresentableObject):
     """
 
     @staticmethod
-    def get_row_and_column_from_address(
-            address: str,
-    ) -> Tuple[Row, Column]:
+    def get_row_and_column_from_address(address: str) -> Tuple[Row, Column]:
         """
         Return row number and column name corresponding
-        to the cell in the excel sheet with specified address.
+        to the cell in the Excel sheet with specified address.
 
         Parameters
         ----------
         address : str
-            Address of the cell in the excel sheet.
+            Address of the cell in the Excel sheet.
 
         Returns
         -------
@@ -57,7 +55,7 @@ class Cell(RepresentableObject):
             column: Union[Column, str],
     ) -> str:
         """
-        Return address of the cell in the excel sheet
+        Return address of the cell in the Excel sheet
         with specified row and column.
 
         Parameters

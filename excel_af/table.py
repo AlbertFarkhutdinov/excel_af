@@ -1,6 +1,6 @@
 """
 This module contains the description
-of the class for tables in excel sheet.
+of the class for tables in Excel sheet.
 
 """
 
@@ -17,7 +17,7 @@ from excel_af.row import Row
 
 class Table(RepresentableObject):
     """
-    Class for tables in excel sheet.
+    Class for tables in Excel sheet.
 
     Attributes
     ----------

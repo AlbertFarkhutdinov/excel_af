@@ -1,4 +1,4 @@
-"""This module contains class for row numbers of excel sheet cells."""
+"""This module contains class for row numbers of Excel sheet cells."""
 
 
 from pretty_repr import RepresentableObject
@@ -6,7 +6,7 @@ from pretty_repr import RepresentableObject
 
 class Row(RepresentableObject):
     """
-    Class for row numbers of excel sheet cells.
+    Class for row numbers of Excel sheet cells.
 
     Attributes
     ----------

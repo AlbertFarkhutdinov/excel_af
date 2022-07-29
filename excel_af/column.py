@@ -1,4 +1,4 @@
-"""This module contains class for column names of excel sheet cells."""
+"""This module contains class for column names of Excel sheet cells."""
 
 
 from pretty_repr import RepresentableObject
@@ -6,7 +6,7 @@ from pretty_repr import RepresentableObject
 
 class Column(RepresentableObject):
     """
-    Class for column names of excel sheet cells.
+    Class for column names of Excel sheet cells.
 
     Attributes
     ----------
@@ -14,7 +14,7 @@ class Column(RepresentableObject):
         The initial cell column name.
     shift : int, optional, default: 0
         Number of columns by which the cell is shifted
-        relative to to the initial cell column.
+        relative to the initial cell column.
 
     """
 
@@ -32,7 +32,7 @@ class Column(RepresentableObject):
             The initial cell column name.
         shift : int, optional, default: 0
             Number of columns by which the cell is shifted
-            relative to to the initial cell column.
+            relative to the initial cell column.
 
         Raises
         ------
@@ -49,7 +49,7 @@ class Column(RepresentableObject):
     def shift(self) -> int:
         """
         Return number of columns by which the cell is shifted
-        relative to to the initial cell column.
+        relative to the initial cell column.
 
         Raises
         ------
