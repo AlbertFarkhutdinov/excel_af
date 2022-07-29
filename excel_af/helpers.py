@@ -5,7 +5,7 @@ that are used in `discrete_sports` package.
 """
 
 
-from typing import Any, Optional, Set
+from typing import Any
 
 
 def get_instance(

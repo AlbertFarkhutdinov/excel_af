@@ -1,4 +1,4 @@
-"""This module contains class for directions of excel tables."""
+"""This module contains class for directions of Excel tables."""
 
 
 from pretty_repr import RepresentableObject
@@ -6,12 +6,12 @@ from pretty_repr import RepresentableObject
 
 class Direction(RepresentableObject):
     """
-    Class for directions of excel tables.
+    Class for directions of Excel tables.
 
     Attributes
     ----------
     direction : str
-        The excel table direction.
+        The Excel table direction.
 
     """
 
@@ -25,7 +25,7 @@ class Direction(RepresentableObject):
         Parameters
         ----------
         direction : str
-            The excel table direction.
+            The Excel table direction.
 
         Raises
         ------
@@ -38,7 +38,7 @@ class Direction(RepresentableObject):
     @property
     def direction(self) -> str:
         """
-        Return the excel table direction.
+        Return the Excel table direction.
 
         Raises
         ------

@@ -1,4 +1,4 @@
-"""This module contains class for excel sheet cells checker."""
+"""This module contains class for Excel sheet cells checker."""
 
 
 from typing import Optional, Union
@@ -8,7 +8,7 @@ from pretty_repr import RepresentableObject
 
 class CellChecker(RepresentableObject):
     """
-    Class for excel sheet cells checker.
+    Class for Excel sheet cells checker.
 
     Attributes
     ----------

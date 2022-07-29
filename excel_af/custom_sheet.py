@@ -1,6 +1,6 @@
 """
 This module contains the description
-of the class for custom excel sheet.
+of the class for custom Excel sheet.
 
 """
 
@@ -21,14 +21,14 @@ from excel_af.table import Table
 
 class CustomSheet(RepresentableObject):
     """
-    Class for custom excel sheet.
+    Class for custom Excel sheet.
 
     Attributes
     ----------
     workbook_path : str
-        Path to the excel workbook.
+        Path to the Excel workbook.
     sheet: xlwings.Sheet
-        Active sheet of the excel workbook.
+        Active sheet of the Excel workbook.
 
     Methods
     -------
@@ -37,7 +37,7 @@ class CustomSheet(RepresentableObject):
     get_number(address, number_type, cell_checker_kwargs)
         Return the number from the cell with specified address.
     get_numbers_list(table, number_type, cell_checker_kwargs)
-        Return the list of numbers number from the specified table.
+        Return the list of numbers from the specified table.
     set_value(value, address, accuracy)
         Set value for the cell with specified address.
     set_numbers_list(table, values, accuracy)
@@ -58,7 +58,7 @@ class CustomSheet(RepresentableObject):
         Parameters
         ----------
         workbook_path : str
-            Path to excel workbook.
+            Path to Excel workbook.
         sheet_name: str, optional
             Name of sheet in workbook. If it is None, active sheet is used.
 
@@ -136,8 +136,7 @@ class CustomSheet(RepresentableObject):
             cell_checker_kwargs: Optional[Dict[str, Any]] = None,
     ) -> List[Union[float, int]]:
         """
-        Return the list of numbers number from
-        the specified table.
+        Return the list of numbers from the specified table.
 
         Parameters
         ----------
@@ -151,8 +150,7 @@ class CustomSheet(RepresentableObject):
         Returns
         -------
         list
-            The list of numbers number from
-            the specified table.
+            The list of numbers from the specified table.
 
         """
         numbers_list = []
