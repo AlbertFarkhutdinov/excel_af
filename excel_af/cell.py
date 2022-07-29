@@ -4,8 +4,9 @@
 from __future__ import annotations
 from typing import Optional, Tuple, Union
 
+from pretty_repr import RepresentableObject
+
 from excel_af.helpers import get_instance
-from excel_af.representable_object import RepresentableObject
 from excel_af.column import Column
 from excel_af.row import Row
 

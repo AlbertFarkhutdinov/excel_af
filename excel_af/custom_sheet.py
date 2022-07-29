@@ -4,13 +4,14 @@ of the class for custom excel sheet.
 
 """
 
+
 import os
 from typing import Any, Dict, List, Optional, Set, Union
 
+from math_round_af import get_rounded_number
+from pretty_repr import RepresentableObject
 import xlwings as xw
 
-from excel_af.helpers import math_round
-from excel_af.representable_object import RepresentableObject
 from excel_af.cell import Cell
 from excel_af.cell_checker import CellChecker
 from excel_af.column import Column
@@ -188,7 +189,10 @@ class CustomSheet(RepresentableObject):
 
         """
         self.sheet.range(address).value = (
-            math_round(number=value, number_of_digits_after_separator=accuracy)
+            get_rounded_number(
+                number=value,
+                number_of_digits_after_separator=accuracy,
+            )
             if isinstance(value, float)
             else value
         )

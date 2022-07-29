@@ -1,7 +1,7 @@
 """This module contains class for directions of excel tables."""
 
 
-from excel_af.representable_object import RepresentableObject
+from pretty_repr import RepresentableObject
 
 
 class Direction(RepresentableObject):

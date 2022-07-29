@@ -4,10 +4,11 @@ of the class for tables in excel sheet.
 
 """
 
+
 from typing import Optional, Union
 
 from excel_af.helpers import get_instance
-from excel_af.representable_object import RepresentableObject
+from pretty_repr import RepresentableObject
 from excel_af.cell import Cell
 from excel_af.column import Column
 from excel_af.direction import Direction

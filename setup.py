@@ -3,7 +3,11 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-requirements = ["xlwings>=0.24.2"]
+requirements = [
+    "xlwings>=0.27.11",
+    "pretty-repr>=1.0.4",
+    "math_round_af>=1.0.3",
+]
 
 setuptools.setup(
     name="excel_af",

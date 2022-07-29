@@ -1,7 +1,7 @@
 """This module contains class for column names of excel sheet cells."""
 
 
-from excel_af.representable_object import RepresentableObject
+from pretty_repr import RepresentableObject
 
 
 class Column(RepresentableObject):
